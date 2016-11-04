@@ -29,6 +29,18 @@ public class Main
 
         fillList(shapeList);
         printList(shapeList);
+
+        List<Circle> circleList = new ArrayList<>();
+
+        for (GeometricShape shape : shapeList)
+        {
+            if (shape instanceof Circle)
+                circleList.add((Circle)shape);      //Cast to Circle cause Java is statically typed
+        }
+
+        //Printing only the circles
+        circleList.stream().forEach(System.out :: println);
+
     }
 
 
